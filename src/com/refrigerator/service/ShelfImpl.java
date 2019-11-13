@@ -5,8 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import com.refrigerator.constant.RefrigeratorConstant;
-import com.refrigerator.constant.ShelfConstant;
 import com.refrigerator.modle.Item;
 import com.refrigerator.modle.Shelf;
 
@@ -118,8 +116,7 @@ public class ShelfImpl implements IShelf {
 				List<Item> itemList = shelf.getItems();
 				if (itemList != null) {
 					for (Item item : itemList) {
-						volumeOfItems = volumeOfItems
-								+ (item.getItemLength() * item.getItemHeight() * item.getItemWidth());
+						volumeOfItems = volumeOfItems + item.getItemVolume();
 					}
 					//TODO get the volume of the item and check whether the vacant space in the shelf is enough  
 					if (volumeOfItems < shelf.getShelfVolume()) {
@@ -148,29 +145,6 @@ public class ShelfImpl implements IShelf {
 		return true;
 	}*/
 
-	@Override
-	public List<Shelf> createShelf(List<Shelf> shelfList) {
-		//check for the shelf height 
-		//if the height of shelf is equal to refrigerator height
-		//den dont create 
-		// else create
-		Double totalShelfHeight = 0.0;
-		Integer count=1;
-		if(!shelfList.isEmpty()){
-			for(Shelf shelf : shelfList){
-				totalShelfHeight = totalShelfHeight + shelf.getHeight();
-				count++;
-			}
-			if(totalShelfHeight < RefrigeratorConstant.HEIGHT_IN_INCHES){
-				//Create Shelf
-				Shelf newShelf = new Shelf(count,ShelfConstant.SHELF+count,ShelfConstant.SHELF_HEIGHT_IN_INCHES);
-				shelfList.add(newShelf);
-			}
-		}else{
-			Shelf newShelf = new Shelf(1,ShelfConstant.SHELF1,ShelfConstant.SHELF_HEIGHT_IN_INCHES);
-			shelfList.add(newShelf);
-		}
-		return shelfList;
-	}
+	
 
 }

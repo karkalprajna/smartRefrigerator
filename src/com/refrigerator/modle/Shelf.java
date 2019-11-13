@@ -2,20 +2,17 @@ package com.refrigerator.modle;
 
 import java.util.List;
 
-import com.refrigerator.constant.RefrigeratorConstant;
-
 public class Shelf {
 	private Integer shelfId;
 	private String shelfName;
 	private Double shelfVolume;//Volume = Length * Height * Width
-	private Double height;
+	
 	private List<Item> items;
 	
-	public Shelf(Integer shelfId,String shelfName,Double height){
+	public Shelf(Integer shelfId,String shelfName,Double shelfVolume){
 		setShelfId(shelfId);
 		setShelfName(shelfName);
-		setHeight(height);
-		setShelfVolume(RefrigeratorConstant.LENGTH_IN_INCHES*getHeight()*RefrigeratorConstant.WIDTH_IN_INCHES);
+		setShelfVolume(shelfVolume);
 	}
 	
 	/**
@@ -68,20 +65,4 @@ public class Shelf {
 	public void setShelfVolume(Double shelfVolume) {
 		this.shelfVolume = shelfVolume;
 	}
-
-	/**
-	 * @return the height
-	 */
-	public Double getHeight() {
-		return height;
-	}
-
-	/**
-	 * @param height the height to set
-	 */
-	public void setHeight(Double height) {
-		this.height = height;
-	}
-	
-	
 }

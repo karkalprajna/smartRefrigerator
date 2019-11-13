@@ -8,7 +8,6 @@ import com.refrigerator.modle.Shelf;
 public interface IShelf {	 
 	List<Shelf> addItem(Item item,List<Shelf> shelf);
 	void getAllItems(List<Shelf> listShelf);
-	List<Shelf> createShelf(List<Shelf> shelfList);
 	Item getItem(Integer id, List<Shelf> shelfList);
 	Item getItemByName(String name, List<Shelf> shelfList);
 }

@@ -10,16 +10,16 @@ import com.refrigerator.modle.Shelf;
 
 public class RefrigeratorImpl implements IRefrigerator {
 	// Create Refrigerator
-		Refrigerator refrigerator = new Refrigerator(
-				RefrigeratorConstant.LENGTH_IN_INCHES,
-				RefrigeratorConstant.HEIGHT_IN_INCHES,
-				RefrigeratorConstant.WIDTH_IN_INCHES);
 		List<Shelf> shelfList = new ArrayList<>();
+		
+		Refrigerator refrigerator = new Refrigerator(
+				RefrigeratorConstant.VOLUME_IN_INCHES,
+				shelfList);
+		
 	@Override
 	public void addItem(Item item) {
 		//Create Shelf
-		ShelfImpl shelfImpl = new ShelfImpl();
-		shelfImpl.createShelf(shelfList);
+		ShelfImpl shelfImpl = new ShelfImpl();		
 		shelfImpl.addItem(item, shelfList);
 		refrigerator.setShelf(shelfList);
 	}

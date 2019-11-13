@@ -3,21 +3,14 @@ package com.refrigerator.modle;
 public class Item {
 	private Integer itemId;
 	private String itemDescription;
-	private String itemName;
-	private Double itemLength;
-	private Double itemHeight;
-	private Double itemWidth;
+	private String itemName;	
 	private Double itemVolume;
 	
-	public Item(Integer itemId, String itemName, String itemDescription, Double itemLength, 
-			Double itemHeight, Double itemWidth){
+	public Item(Integer itemId, String itemName, String itemDescription, Double itemVolume){
 		setItemId(itemId);
 		setItemName(itemName);
 		setItemDescription(itemDescription);
-		setItemLength(itemLength);
-		setItemHeight(itemHeight);
-		setItemWidth(itemWidth);
-		setItemVolume(itemLength*itemHeight*itemWidth);
+		setItemVolume(itemVolume);
 	}
 	/**
 	 * @return the itemId
@@ -55,42 +48,7 @@ public class Item {
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-	/**
-	 * @return the itemLength
-	 */
-	public Double getItemLength() {
-		return itemLength;
-	}
-	/**
-	 * @param itemLength the itemLength to set
-	 */
-	public void setItemLength(Double itemLength) {
-		this.itemLength = itemLength;
-	}
-	/**
-	 * @return the itemHeight
-	 */
-	public Double getItemHeight() {
-		return itemHeight;
-	}
-	/**
-	 * @param itemHeight the itemHeight to set
-	 */
-	public void setItemHeight(Double itemHeight) {
-		this.itemHeight = itemHeight;
-	}
-	/**
-	 * @return the itemWidth
-	 */
-	public Double getItemWidth() {
-		return itemWidth;
-	}
-	/**
-	 * @param itemWidth the itemWidth to set
-	 */
-	public void setItemWidth(Double itemWidth) {
-		this.itemWidth = itemWidth;
-	}
+	
 	/**
 	 * @return the itemVolume
 	 */
