@@ -4,13 +4,20 @@ public class Item {
 	private Integer itemId;
 	private String itemDescription;
 	private String itemName;
-	private Integer itemQuantity;
+	private Double itemLength;
+	private Double itemHeight;
+	private Double itemWidth;
+	private Double itemVolume;
 	
-	public Item(Integer itemId, String itemName, String itemDescription, Integer itemQuantity){
+	public Item(Integer itemId, String itemName, String itemDescription, Double itemLength, 
+			Double itemHeight, Double itemWidth){
 		setItemId(itemId);
 		setItemName(itemName);
 		setItemDescription(itemDescription);
-		setItemQuantity(itemQuantity);
+		setItemLength(itemLength);
+		setItemHeight(itemHeight);
+		setItemWidth(itemWidth);
+		setItemVolume(itemLength*itemHeight*itemWidth);
 	}
 	/**
 	 * @return the itemId
@@ -49,21 +56,52 @@ public class Item {
 		this.itemName = itemName;
 	}
 	/**
-	 * @return the itemQuantity
+	 * @return the itemLength
 	 */
-	public Integer getItemQuantity() {
-		return itemQuantity;
+	public Double getItemLength() {
+		return itemLength;
 	}
 	/**
-	 * @param itemQuantity the itemQuantity to set
+	 * @param itemLength the itemLength to set
 	 */
-	public void setItemQuantity(Integer itemQuantity) {
-		if(itemQuantity <= 4){
-			this.itemQuantity = itemQuantity;
-		}else{
-			System.out.println("Quantity must be less than or equal to 4");
-			System.exit(0);
-		}
+	public void setItemLength(Double itemLength) {
+		this.itemLength = itemLength;
+	}
+	/**
+	 * @return the itemHeight
+	 */
+	public Double getItemHeight() {
+		return itemHeight;
+	}
+	/**
+	 * @param itemHeight the itemHeight to set
+	 */
+	public void setItemHeight(Double itemHeight) {
+		this.itemHeight = itemHeight;
+	}
+	/**
+	 * @return the itemWidth
+	 */
+	public Double getItemWidth() {
+		return itemWidth;
+	}
+	/**
+	 * @param itemWidth the itemWidth to set
+	 */
+	public void setItemWidth(Double itemWidth) {
+		this.itemWidth = itemWidth;
+	}
+	/**
+	 * @return the itemVolume
+	 */
+	public Double getItemVolume() {
+		return itemVolume;
+	}
+	/**
+	 * @param itemVolume the itemVolume to set
+	 */
+	public void setItemVolume(Double itemVolume) {
+		this.itemVolume = itemVolume;
 	}
 	
 }

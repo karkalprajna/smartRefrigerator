@@ -5,11 +5,10 @@ import java.util.List;
 import com.refrigerator.modle.Item;
 import com.refrigerator.modle.Shelf;
 
-public interface IShelf {
-	public void getAllItems(); 
-	public Item getItem(Integer id);
-	public Item getItemByName(String name);
-	public void addItem(Item item,Shelf shelf);
-    public List<Shelf> createShelf();
-	
+public interface IShelf {	 
+	List<Shelf> addItem(Item item,List<Shelf> shelf);
+	void getAllItems(List<Shelf> listShelf);
+	List<Shelf> createShelf(List<Shelf> shelfList);
+	Item getItem(Integer id, List<Shelf> shelfList);
+	Item getItemByName(String name, List<Shelf> shelfList);
 }

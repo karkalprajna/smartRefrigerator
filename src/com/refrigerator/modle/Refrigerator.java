@@ -2,9 +2,7 @@ package com.refrigerator.modle;
 
 import java.util.List;
 
-import com.refrigerator.service.AbstractRefrigerator;
-
-public class Refrigerator extends AbstractRefrigerator{
+public class Refrigerator {
 	//Volume = Length * Height * Width, or V = L * H * W.
 	private Double length;
 	private Double height;
@@ -16,7 +14,7 @@ public class Refrigerator extends AbstractRefrigerator{
 		setLength(length);
 		setHeight(height);
 		setWidth(width);
-		setVolume(this.length*this.height*this.width);
+		setVolume(length*height*width);
 	}
 	
 	/**
