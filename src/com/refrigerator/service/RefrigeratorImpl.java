@@ -18,7 +18,6 @@ public class RefrigeratorImpl implements IRefrigerator {
 		
 	@Override
 	public void addItem(Item item) {
-		//Create Shelf
 		ShelfImpl shelfImpl = new ShelfImpl();		
 		shelfImpl.addItem(item, shelfList);
 		refrigerator.setShelf(shelfList);

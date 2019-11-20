@@ -80,7 +80,7 @@ public class ShelfImpl implements IShelf {
 		try {
 			if (!shelfList.isEmpty()) {
 				//get the shelf name where the item needs to be placed 
-				Shelf shelfName = getVacantShelf(shelfList);
+				Shelf shelfName = getVacantShelf(shelfList,item.getItemVolume());
 				
 				if (shelfName != null) {
 					addItemToShelf(item, shelfList.get(shelfList.indexOf(shelfName)));
@@ -106,7 +106,7 @@ public class ShelfImpl implements IShelf {
 		}
 	}
 
-	private Shelf getVacantShelf(List<Shelf> shelfList) {
+	private Shelf getVacantShelf(List<Shelf> shelfList, Double itemVolume) {
 		// find the empty space and add the item
 		// if the refrigerator is full -> display the appropriate message
 		
@@ -120,7 +120,10 @@ public class ShelfImpl implements IShelf {
 					}
 					//TODO get the volume of the item and check whether the vacant space in the shelf is enough  
 					if (volumeOfItems < shelf.getShelfVolume()) {
-						return shelf;
+						Double spaceLeft = shelf.getShelfVolume() - volumeOfItems;
+						if(itemVolume<spaceLeft){
+							return shelf;
+						}
 					}
 				}else{
 					return shelf;
